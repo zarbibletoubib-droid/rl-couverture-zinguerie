@@ -45,11 +45,31 @@
     var tlHint = tl.querySelector(".tl-hint");
     var phaseBefore = tl.querySelector(".tl-phase--before");
     var phaseAfter = tl.querySelector(".tl-phase--after");
+    var videoReady = false;
 
-    // Attendre que la vidéo soit chargée pour connaître sa durée
+    // Débloquer la vidéo sur mobile (iOS/Android exigent une interaction)
+    function unlockVideo() {
+      if (videoReady) return;
+      video.play().then(function () {
+        video.pause();
+        video.currentTime = 0;
+        videoReady = true;
+      }).catch(function () {});
+    }
+
+    // Déclencher au premier touch OU scroll
+    document.addEventListener("touchstart", unlockVideo, { once: true });
+    document.addEventListener("scroll", unlockVideo, { once: true });
+    document.addEventListener("click", unlockVideo, { once: true });
+
+    // Marquer prêt quand les métadonnées sont chargées
     video.addEventListener("loadedmetadata", function () {
       video.currentTime = 0;
+      videoReady = true;
     });
+
+    // Forcer le préchargement complet
+    video.load();
 
     window.addEventListener("scroll", function () {
       var rect = tl.getBoundingClientRect();
@@ -58,7 +78,7 @@
 
       // Piloter la vidéo avec le scroll
       if (video.duration && isFinite(video.duration)) {
-        video.currentTime = p * video.duration;
+        try { video.currentTime = p * video.duration; } catch (e) {}
       }
 
       // Labels
