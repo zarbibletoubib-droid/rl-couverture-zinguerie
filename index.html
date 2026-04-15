@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RL ZINC — Charpente, Couverture & Zinguerie</title>
+  <meta name="description" content="RL ZINC, spécialiste en charpente, couverture et zinguerie haut de gamme. Interventions à Rennes, Paris, Grenoble et toute la France." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="img/logo-court-dark.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="header" id="header">
+    <div class="wrap header-inner">
+      <a href="#accueil" class="logo" aria-label="RL ZINC — Accueil">
+        <img src="img/logo-court-dark.svg" alt="RL ZINC" class="logo-short" />
+        <img src="img/logo-long-dark.svg" alt="RL ZINC — Charpente Couverture Zinguerie" class="logo-long" />
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#services">Expertises</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#avis">Avis</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact" class="nav-cta">Devis gratuit</a>
+      </nav>
+      <a href="tel:+33781669592" class="header-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        07 81 66 95 92
+      </a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="nav-mobile" id="nav-mobile">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Expertises</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a href="#apropos">À propos</a>
+      <a href="#contact">Demander un devis</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══ TIMELAPSE RÉNOVATION (vidéo pilotée au scroll) ═══ -->
+    <section class="timelapse" id="timelapse" aria-label="Timelapse rénovation de toiture">
+      <div class="timelapse-sticky">
+        <video class="tl-video" id="tl-video" src="img/timelapse.mp4" muted playsinline preload="auto"></video>
+
+        <div class="tl-overlay"></div>
+
+        <div class="tl-content">
+          <p class="tl-phase tl-phase--before active">Avant</p>
+          <p class="tl-phase tl-phase--after">Après</p>
+        </div>
+
+        <div class="tl-bottom">
+          <div class="tl-progress"><div class="tl-bar"></div></div>
+          <p class="tl-hint">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            Scrollez pour lancer la rénovation
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="accueil">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1 class="reveal">Charpente, couverture<br />&amp; zinguerie <em>d'exception</em></h1>
+          <p class="hero-sub reveal" data-d="80">Un savoir-faire forgé chez les Compagnons du Tour de France, au service de vos toitures les plus exigeantes — des monuments historiques aux résidences contemporaines.</p>
+          <div class="hero-badge reveal" data-d="120">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/></svg>
+            Formé par les Compagnons du Tour de France
+          </div>
+          <div class="hero-actions reveal" data-d="160">
+            <a href="#contact" class="btn">Demander un devis <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+        <div class="hero-visual reveal" data-d="100">
+          <img src="img/hero.png" alt="Toiture zinc haussmannienne au coucher du soleil" />
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="wrap">
+        <div class="stats reveal" data-d="200">
+          <div class="stat">
+            <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/></svg></div>
+            <div><strong>Compagnon</strong><span>du Tour de France</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg></div>
+            <div><strong>10+ ans</strong><span>d'expérience terrain</span></div>
+          </div>
+          <div class="stat">
+            <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+            <div><strong>Monuments</strong><span>historiques classés</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ SERVICES ═══ -->
+    <section class="services" id="services">
+      <div class="wrap services-inner">
+        <div class="services-left reveal">
+          <p class="tag">Nos expertises</p>
+          <h2>Charpente, couverture &amp; zinguerie <em>sur mesure</em></h2>
+          <p class="services-desc">Des fondations de votre charpente jusqu'aux finitions de zinguerie, nous maîtrisons chaque étape pour des toitures qui traversent le temps.</p>
+          <img src="img/real-rennes.png" alt="Maison bretonne avec toiture rénovée" class="services-img" />
+        </div>
+        <div class="services-right">
+          <div class="svc-card reveal">
+            <div class="svc-num">01</div>
+            <div>
+              <h3>Charpente bois</h3>
+              <p>Conception et pose de charpentes traditionnelles et contemporaines, en bois massif ou lamellé-collé.</p>
+            </div>
+          </div>
+          <div class="svc-card reveal" data-d="60">
+            <div class="svc-num">02</div>
+            <div>
+              <h3>Couverture zinc &amp; tuiles</h3>
+              <p>Réalisation et rénovation de toitures en zinc, tuiles et ardoises, pensées pour durer.</p>
+            </div>
+          </div>
+          <div class="svc-card reveal" data-d="120">
+            <div class="svc-num">03</div>
+            <div>
+              <h3>Zinguerie sur mesure</h3>
+              <p>Chéneaux, noues, gouttières et habillages métalliques travaillés avec précision.</p>
+            </div>
+          </div>
+          <div class="svc-card reveal" data-d="180">
+            <div class="svc-num">04</div>
+            <div>
+              <h3>Rénovation haussmannienne</h3>
+              <p>Intervention sur immeubles anciens dans le respect de l'architecture et du patrimoine.</p>
+            </div>
+          </div>
+          <div class="svc-card reveal" data-d="240">
+            <div class="svc-num">05</div>
+            <div>
+              <h3>Étanchéité &amp; isolation</h3>
+              <p>Solutions performantes pour le confort et la performance énergétique de votre bien.</p>
+            </div>
+          </div>
+          <div class="svc-card reveal" data-d="300">
+            <div class="svc-num">06</div>
+            <div>
+              <h3>Urgences &amp; réparations</h3>
+              <p>Diagnostic et sécurisation rapide en cas d'infiltration, fuite ou intempéries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ RÉALISATIONS ═══ -->
+    <section class="realisations" id="realisations">
+      <div class="wrap">
+        <div class="real-header reveal">
+          <div>
+            <p class="tag">Portfolio</p>
+            <h2>Nos réalisations</h2>
+          </div>
+          <div class="real-nav">
+            <button class="real-arr real-arr--prev" aria-label="Précédent"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+            <button class="real-arr real-arr--next" aria-label="Suivant"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="real-track" id="real-track">
+        <article class="real-card reveal">
+          <img src="img/real-paris.png" alt="Toiture zinc immeuble haussmannien Paris" />
+          <div class="real-body">
+            <span class="real-loc">Paris 8<sup>e</sup></span>
+            <h3>Toiture zinc — Immeuble haussmannien</h3>
+            <p>Rénovation complète de la couverture en zinc et reprise des lucarnes sur immeuble classé.</p>
+          </div>
+        </article>
+        <article class="real-card reveal" data-d="80">
+          <img src="img/real-rennes.png" alt="Réfection toiture maison de ville Rennes" />
+          <div class="real-body">
+            <span class="real-loc">Rennes</span>
+            <h3>Réfection de toiture — Maison de ville</h3>
+            <p>Remplacement de la couverture, isolation et création de nouvelles sorties de toit.</p>
+          </div>
+        </article>
+        <article class="real-card reveal" data-d="160">
+          <img src="img/real-grenoble.png" alt="Habillages zinc bâtiment Grenoble" />
+          <div class="real-body">
+            <span class="real-loc">Grenoble</span>
+            <h3>Habillages &amp; chéneaux — Bâtiment tertiaire</h3>
+            <p>Habillages métalliques et évacuation sur un bâtiment contemporain en zone alpine.</p>
+          </div>
+        </article>
+        <article class="real-card reveal" data-d="240">
+          <img src="img/hero.png" alt="Toitures zinc Paris coucher de soleil" />
+          <div class="real-body">
+            <span class="real-loc">Paris</span>
+            <h3>Couverture zinc — Toits de Paris</h3>
+            <p>Intervention sur plusieurs toitures zinc mitoyennes avec reprise d'étanchéité complète.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ═══ AVIS ═══ -->
+    <section class="avis" id="avis">
+      <div class="wrap">
+        <div class="section-intro reveal">
+          <p class="tag">Témoignages</p>
+          <h2>Ils nous font confiance</h2>
+        </div>
+        <div class="avis-grid">
+          <blockquote class="avis-card reveal">
+            <p>&laquo; RL ZINC a su redonner tout son cachet à la toiture zinc de notre immeuble haussmannien. Chantier propre, délais tenus et communication impeccable. &raquo;</p>
+            <footer><strong>Claire M.</strong><span>Propriétaire — Paris 7<sup>e</sup></span></footer>
+          </blockquote>
+          <blockquote class="avis-card reveal" data-d="60">
+            <p>&laquo; Un partenaire fiable sur les lots couverture et zinguerie, capable de gérer des détails techniques complexes et de proposer des solutions élégantes. &raquo;</p>
+            <footer><strong>Thomas R.</strong><span>Architecte — Rennes</span></footer>
+          </blockquote>
+          <blockquote class="avis-card reveal" data-d="120">
+            <p>&laquo; Intervention rapide et soignée sur plusieurs immeubles de notre parc. Les copropriétaires ont apprécié la qualité des finitions. &raquo;</p>
+            <footer><strong>Syndic de copropriété</strong><span>Grenoble</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ À PROPOS ═══ -->
+    <section class="apropos" id="apropos">
+      <div class="wrap apropos-inner">
+        <div class="apropos-img reveal">
+          <img src="img/real-paris.png" alt="Toiture haussmannienne rénovée" />
+        </div>
+        <div class="apropos-text reveal" data-d="80">
+          <p class="tag">À propos</p>
+          <h2>L'exigence <em>au sommet</em></h2>
+          <div class="apropos-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 6h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/></svg>
+            Formé par les Compagnons du Tour de France
+          </div>
+          <p>Fondateur formé par les <strong>Compagnons du Tour de France</strong>, RL ZINC perpétue une tradition d'excellence transmise de maître en apprenti depuis des siècles. Cette formation exigeante — des années de perfectionnement sur des chantiers d'exception à travers la France — garantit un niveau de savoir-faire rare dans les métiers de la toiture.</p>
+          <p>Fort de <strong>plusieurs années d'expérience sur des monuments historiques classés</strong>, notre équipe maîtrise les techniques ancestrales comme les plus modernes : couverture en zinc à joint debout, charpentes traditionnelles, zinguerie ornementale, rénovation de lucarnes et de corniches dans le respect des prescriptions des Architectes des Bâtiments de France.</p>
+          <p>Aujourd'hui, nous mettons cette expertise au service de tous — particuliers, architectes et collectivités — à Rennes, Paris, Grenoble et sur l'ensemble du territoire français.</p>
+          <div class="apropos-zones">
+            <div class="zone-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 10-16 0c0 3 2.7 7 8 11.7z"/></svg> Rennes</div>
+            <div class="zone-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 10-16 0c0 3 2.7 7 8 11.7z"/></svg> Paris</div>
+            <div class="zone-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 10-16 0c0 3 2.7 7 8 11.7z"/></svg> Grenoble</div>
+            <div class="zone-pill zone-pill--all"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><ellipse cx="12" cy="12" rx="4" ry="10"/><path d="M2 12h20"/></svg> Toute la France</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ PROCESS ═══ -->
+    <section class="process">
+      <div class="wrap">
+        <div class="section-intro reveal">
+          <p class="tag">Notre méthode</p>
+          <h2>Trois étapes vers <em>votre toiture</em></h2>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="step-n">[1]</span>
+            <h3>Consultation &amp; diagnostic</h3>
+            <p>Nous analysons votre projet, réalisons un diagnostic précis et vous proposons un devis détaillé et transparent.</p>
+          </div>
+          <div class="step reveal" data-d="100">
+            <span class="step-n">[2]</span>
+            <h3>Réalisation</h3>
+            <p>Nos équipes interviennent avec rigueur et savoir-faire, dans le respect des délais et de votre environnement.</p>
+          </div>
+          <div class="step reveal" data-d="200">
+            <span class="step-n">[3]</span>
+            <h3>Livraison &amp; garantie</h3>
+            <p>Réception du chantier, vérification finale et garantie décennale pour votre totale tranquillité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══ CONTACT ═══ -->
+    <section class="contact" id="contact">
+      <div class="wrap contact-inner">
+        <div class="contact-info reveal">
+          <p class="tag">Contact</p>
+          <h2>Parlons de votre <em>projet</em></h2>
+          <p>Rénovation, construction neuve ou urgence — expliquez-nous votre situation et recevez un retour personnalisé sous 48h.</p>
+          <div class="contact-links">
+            <a href="tel:+33781669592"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.86 19.86 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.86 19.86 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> 07 81 66 95 92</a>
+            <a href="mailto:contact@rl-zinc.fr"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg> contact@rl-zinc.fr</a>
+          </div>
+        </div>
+        <form class="form reveal" data-d="80" id="contact-form" action="https://formsubmit.co/rlzinc.contact@gmail.com" method="POST">
+          <!-- Config FormSubmit -->
+          <input type="hidden" name="_subject" value="Nouvelle demande de devis — RL ZINC" />
+          <input type="hidden" name="_next" value="https://www.rl-couverture-zinguerie.fr/#contact" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" style="display:none" />
+          <div class="f-row f-row--2">
+            <div class="f-group"><label for="nom">Nom, prénom *</label><input type="text" id="nom" name="nom" required /></div>
+            <div class="f-group"><label for="tel">Téléphone</label><input type="tel" id="tel" name="tel" /></div>
+          </div>
+          <div class="f-group"><label for="email">Email *</label><input type="email" id="email" name="email" required /></div>
+          <div class="f-row f-row--2">
+            <div class="f-group"><label for="projet">Type de projet</label>
+              <select id="projet" name="projet"><option value="">Sélectionner</option><option>Charpente</option><option>Rénovation</option><option>Construction neuve</option><option>Urgence</option><option>Zinguerie</option><option>Autre</option></select>
+            </div>
+            <div class="f-group"><label for="ville">Ville</label><input type="text" id="ville" name="ville" /></div>
+          </div>
+          <div class="f-group"><label for="msg">Message *</label><textarea id="msg" name="msg" rows="4" required></textarea></div>
+          <button type="submit" class="btn btn--full">Envoyer ma demande <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a href="#accueil" class="footer-logo" aria-label="RL ZINC">
+        <img src="img/logo-long-dark.svg" alt="RL ZINC" />
+      </a>
+      <p>Charpente &middot; Couverture &middot; Zinguerie</p>
+      <div class="footer-links">
+        <a href="#services">Expertises</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <small>&copy; 2025 RL ZINC — Tous droits réservés</small>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
