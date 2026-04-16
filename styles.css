@@ -207,7 +207,7 @@ h2 em { font-style: italic; }
 
 /* Backdrop — partie visible à gauche (1/3 de l'écran) */
 .nav-backdrop {
-  position: fixed; inset: 0;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.35);
   z-index: 9998; opacity: 0; pointer-events: none;
   transition: opacity 0.35s var(--ease);
@@ -216,36 +216,45 @@ h2 em { font-style: italic; }
 
 /* Drawer — couvre 2/3 de l'écran depuis la droite */
 .nav-mobile {
-  position: fixed; top: 0; right: 0; bottom: 0;
+  position: fixed; top: 0; right: 0;
   width: 66vw;
+  height: 100vh;
+  height: 100dvh;
   background: #F5F3EE;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 28px;
   z-index: 9999;
   transform: translateX(100%);
   transition: transform 0.4s var(--ease);
-  box-shadow: -12px 0 40px rgba(0,0,0,0.2);
+  box-shadow: -12px 0 40px rgba(0,0,0,0.25);
   overflow-y: auto;
-  padding: 80px 24px 40px;
+  padding: 100px 20px 40px;
 }
 .nav-mobile.open { transform: translateX(0); }
 .nav-mobile a {
-  font-family: var(--serif); font-size: 26px; color: var(--dark);
+  font-family: var(--serif);
+  font-size: 24px;
+  color: var(--dark);
   transition: color 0.3s;
+  text-align: center;
+  white-space: nowrap;
 }
-.nav-mobile a:hover { color: var(--gold); }
+.nav-mobile a:hover,
+.nav-mobile a:active { color: var(--gold); }
 
 /* Effet sur la page derrière quand menu ouvert */
 body.menu-open { overflow: hidden; }
-body.menu-open main,
-body.menu-open .site-footer,
-body.menu-open footer {
-  transform: scale(0.96);
+body.menu-open > main,
+body.menu-open > footer,
+body.menu-open > .site-footer {
+  transform: scale(0.95);
   transform-origin: left center;
-  filter: blur(3px) brightness(0.75);
-  transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+  filter: blur(3px) brightness(0.7);
   pointer-events: none;
 }
-main, .site-footer, footer {
+body > main,
+body > footer,
+body > .site-footer {
   transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
 }
 
