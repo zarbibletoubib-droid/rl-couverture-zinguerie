@@ -43,11 +43,13 @@
   function openMenu() {
     navM.classList.add("open");
     if (backdrop) backdrop.classList.add("open");
+    if (burgerFloat) burgerFloat.classList.add("in-drawer");
     document.body.classList.add("menu-open");
   }
   function closeMenu() {
     navM.classList.remove("open");
     if (backdrop) backdrop.classList.remove("open");
+    if (burgerFloat) burgerFloat.classList.remove("in-drawer");
     document.body.classList.remove("menu-open");
   }
   function toggleMenu() {
