@@ -6,9 +6,35 @@
 
   /* ── Header ── */
   var header = document.getElementById("header");
+  var burgerFloat = document.getElementById("burger-float");
+  var lastY = 0;
+  var isMobile = window.matchMedia("(max-width: 899px)").matches;
+
   window.addEventListener("scroll", function () {
-    header.classList.toggle("scrolled", window.scrollY > 40);
+    var y = window.scrollY;
+    header.classList.toggle("scrolled", y > 40);
+
+    // Sur mobile : cacher le header après 120px de scroll, afficher le burger flottant
+    if (isMobile) {
+      if (y > 120) {
+        header.classList.add("hidden");
+        if (burgerFloat) burgerFloat.classList.add("visible");
+      } else {
+        header.classList.remove("hidden");
+        if (burgerFloat) burgerFloat.classList.remove("visible");
+      }
+    }
+    lastY = y;
   }, { passive: true });
+
+  // Resize : recalcule si on passe de mobile à desktop
+  window.addEventListener("resize", function () {
+    isMobile = window.matchMedia("(max-width: 899px)").matches;
+    if (!isMobile) {
+      header.classList.remove("hidden");
+      if (burgerFloat) burgerFloat.classList.remove("visible");
+    }
+  });
 
   /* ── Burger ── */
   var burger = document.getElementById("burger");
@@ -24,9 +50,11 @@
     if (backdrop) backdrop.classList.remove("open");
     document.body.classList.remove("menu-open");
   }
-  burger.addEventListener("click", function () {
+  function toggleMenu() {
     if (navM.classList.contains("open")) closeMenu(); else openMenu();
-  });
+  }
+  burger.addEventListener("click", toggleMenu);
+  if (burgerFloat) burgerFloat.addEventListener("click", toggleMenu);
   if (backdrop) backdrop.addEventListener("click", closeMenu);
   navM.querySelectorAll("a").forEach(function (a) {
     a.addEventListener("click", closeMenu);
