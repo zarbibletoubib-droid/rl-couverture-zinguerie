@@ -13,24 +13,21 @@
   /* ── Burger ── */
   var burger = document.getElementById("burger");
   var navM = document.getElementById("nav-mobile");
-  var scrollY = 0;
+  var backdrop = document.getElementById("nav-backdrop");
   function openMenu() {
-    scrollY = window.scrollY;
-    burger.classList.add("active");
     navM.classList.add("open");
+    if (backdrop) backdrop.classList.add("open");
     document.body.classList.add("menu-open");
-    document.body.style.top = "-" + scrollY + "px";
   }
   function closeMenu() {
-    burger.classList.remove("active");
     navM.classList.remove("open");
+    if (backdrop) backdrop.classList.remove("open");
     document.body.classList.remove("menu-open");
-    document.body.style.top = "";
-    window.scrollTo(0, scrollY);
   }
   burger.addEventListener("click", function () {
     if (navM.classList.contains("open")) closeMenu(); else openMenu();
   });
+  if (backdrop) backdrop.addEventListener("click", closeMenu);
   navM.querySelectorAll("a").forEach(function (a) {
     a.addEventListener("click", closeMenu);
   });

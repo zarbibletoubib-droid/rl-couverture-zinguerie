@@ -197,32 +197,57 @@ h2 em { font-style: italic; }
 
 .burger {
   display: flex; flex-direction: column; gap: 5px;
-  cursor: pointer; z-index: 110; padding: 8px;
+  cursor: pointer; z-index: 10001; padding: 8px;
+  position: relative;
 }
 .burger span {
   width: 24px; height: 2px; background: var(--dark); border-radius: 2px;
-  transition: transform 0.3s var(--ease), opacity 0.3s;
+  transition: background 0.3s;
 }
-.burger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.burger.active span:nth-child(2) { opacity: 0; }
-.burger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.nav-mobile {
-  position: fixed; inset: 0; background: #F5F3EE;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
-  z-index: 9999; opacity: 0; pointer-events: none; transition: opacity 0.3s;
-  will-change: opacity;
-  width: 100vw; height: 100vh; height: 100dvh;
-  overflow-y: auto;
+/* Backdrop — partie visible à gauche (1/3 de l'écran) */
+.nav-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 9998; opacity: 0; pointer-events: none;
+  transition: opacity 0.35s var(--ease);
 }
-.nav-mobile.open { opacity: 1; pointer-events: auto; }
-/* Quand le menu est ouvert, bloquer tout scroll */
-body.menu-open { overflow: hidden; position: fixed; width: 100%; }
+.nav-backdrop.open { opacity: 1; pointer-events: auto; }
+
+/* Drawer — couvre 2/3 de l'écran depuis la droite */
+.nav-mobile {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 66vw;
+  background: #F5F3EE;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.4s var(--ease);
+  box-shadow: -12px 0 40px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  padding: 80px 24px 40px;
+}
+.nav-mobile.open { transform: translateX(0); }
 .nav-mobile a {
-  font-family: var(--serif); font-size: 28px; color: var(--dark);
+  font-family: var(--serif); font-size: 26px; color: var(--dark);
   transition: color 0.3s;
 }
 .nav-mobile a:hover { color: var(--gold); }
+
+/* Effet sur la page derrière quand menu ouvert */
+body.menu-open { overflow: hidden; }
+body.menu-open main,
+body.menu-open .site-footer,
+body.menu-open footer {
+  transform: scale(0.96);
+  transform-origin: left center;
+  filter: blur(3px) brightness(0.75);
+  transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+  pointer-events: none;
+}
+main, .site-footer, footer {
+  transition: transform 0.4s var(--ease), filter 0.4s var(--ease);
+}
 
 @media (min-width: 900px) {
   .nav { display: flex; }
