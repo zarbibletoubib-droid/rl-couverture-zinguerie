@@ -13,17 +13,26 @@
   /* ── Burger ── */
   var burger = document.getElementById("burger");
   var navM = document.getElementById("nav-mobile");
+  var scrollY = 0;
+  function openMenu() {
+    scrollY = window.scrollY;
+    burger.classList.add("active");
+    navM.classList.add("open");
+    document.body.classList.add("menu-open");
+    document.body.style.top = "-" + scrollY + "px";
+  }
+  function closeMenu() {
+    burger.classList.remove("active");
+    navM.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    document.body.style.top = "";
+    window.scrollTo(0, scrollY);
+  }
   burger.addEventListener("click", function () {
-    var open = burger.classList.toggle("active");
-    navM.classList.toggle("open", open);
-    document.body.style.overflow = open ? "hidden" : "";
+    if (navM.classList.contains("open")) closeMenu(); else openMenu();
   });
   navM.querySelectorAll("a").forEach(function (a) {
-    a.addEventListener("click", function () {
-      burger.classList.remove("active");
-      navM.classList.remove("open");
-      document.body.style.overflow = "";
-    });
+    a.addEventListener("click", closeMenu);
   });
 
   /* ── Smooth scroll ── */
